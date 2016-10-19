@@ -2,17 +2,65 @@
 <head>
 <script src="index.js"></script>
 <title>
-	Hangman Game
+	Pizza Store
 </title>
-<body>
-<h1 id="title"> Simons Hangman Game</h1>
-<p> Enter a letter below:</p>
-<input type="text" id="myTextField"/>
-<input type="submit" id="byBtn" value="Enter a Letter" onclick="Hangman()"/>
-<p id="guessCount"> Number of Guesses: </p> 
-<h2> Correct Letters: </h2>
-<p id="correctLetter"></p></br>
-<h2> Guessed Letters: </h2>
-<p id="incorrectLetter"></p>
-</body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
+<!-- indent this properly -->
+<body>
+<div class="container">
+
+<h1 id="title"> Papa Simon's Pizza</h1>
+<h3> Total: </h3>
+<p id="total"> $10 </p>
+
+<h3> Toppings: </h3>
+<p id="toppings"> Select from our list of premium toppings:  </p>
+
+<form>
+	<input type="checkbox" id = "Pepperoni" name="Pepperoni" value="1.5" onclick="sumOrder(id)"> Pepperoni	$1.5<br>
+	<input type="checkbox" id = "Salami" name="Salami" value="1.25" onclick="sumOrder(id)"> Salami	$1.25<br>
+	<input type="checkbox" id = "Cheese" name="Cheese" value="2.5" onclick="sumOrder(id)"> Cheese	$2.5<br>
+	<input type="checkbox" id = "Peppers" name="Peppers" value="1" onclick="sumOrder(id)"> Peppers	$1<br>
+	<input type="checkbox" id = "Mushrooms" name="Mushrooms" value="1" onclick="sumOrder(id)"> Mushrooms	$1<br>
+<input type="button" value="Place Your Order!" onclick="completeOrder()" class="btn btn-success"/>
+</form>
+
+<form method="GET" id="my_form"></form>
+
+<!--
+<script>
+    makeUL(toppingList);
+</script>
+-->
+
+<!--styling for jquery -->
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div> <!-- .container -->
+</body>
+
+<!-- insert in <body>
+<div id="dialog" title="Thank you!">
+  <p>Your order has been placed</p>
+</div>
+-->
+<!-- an attempt to style alert
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery UI Dialog - Default functionality</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+$( "#dialog" ).dialog();
+} );
+</script>
+-->

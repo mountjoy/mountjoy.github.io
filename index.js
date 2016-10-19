@@ -1,15 +1,57 @@
-/*var express = require('express')
-var app = express()
- 
-app.get('/', function (req, res) {
-  res.send('Simon\'s first website')
-})
- */
-//app.listen(3000)
-var wrong = [];
-var right = ["_","_","_"];
-var guesses = 0;
+var totalPrice = 10;
+var toppingList = [];
 
+function sumOrder(topping){
+  console.log("The topping you clicked was:"+ document.getElementById(topping).name);
+  var price = parseFloat(document.getElementById(topping).value);
+  if(document.getElementById(topping).checked)
+  {
+    console.log("button is clicked");
+    totalPrice = totalPrice + price;
+    toppingList.push(topping);
+  }
+  else
+  {
+    totalPrice = totalPrice - price;
+    toppingList.pop(topping);
+  }
+  total.innerHTML = "$" + totalPrice;
+  toppings.innerHTML = toppingList.toString();
+}
+
+function completeOrder(){
+  console.log(toppingList.toString() + "=" + "$" + totalPrice);
+  total.innerHTML = totalPrice;
+  console.log("Thanks, order is completed");
+  alert('Thank you! Your order is complete!');
+}
+
+/*
+function makeUL(array) {
+    // Create the list element:
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+
+        // Set its contents:
+        item.appendChild(document.createTextNode(array[i]));
+
+        // Add it to the list:
+        list.appendChild(item);
+        console.log(item);
+        total.innerHTML = list;
+
+    }
+    // Finally, return the constructed list:
+    return list;
+    total.innerHTML = list;
+}
+
+*/
+
+/*
 function Hangman(){
    var fox = ["f","o","x"];
    var myNewTitle = document.getElementById('myTextField').value;
@@ -54,3 +96,4 @@ function Hangman(){
 	guessCount.innerHTML = guesses;
     document.getElementById('myTextField').value = '';
 }	
+*/
